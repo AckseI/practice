@@ -22,22 +22,25 @@
                 </div>
 
                 <div class="col-md-3 text-end">
-                    <a href="new.html" class="btn btn-primary btn-primary1 ">Создать пост</a>
+                    <a href="#" class="btn btn-primary btn-primary1 ">Создать пост</a>
                 </div>
             </header>
         </div>
     </header>
     <main>
         <div class="container">
-            <form>
-                <fieldset disabled>
-                  <legend>Успешно!</legend>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">К посту</button>
-                    <button type="button" class="btn btn-primary">Главная</button>
-                  </div>
-                </fieldset>
-              </form>
+            <form action="#" method="post">
+                <div class="mb-3">
+                    <label for="image" class="form-label">Изображение</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Комментарий</label>
+                    <textarea name="comment" class="form-control comment-field" id="comment" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Опубликовать</button>
+                <!-- <a href="result.html" class="btn btn-primary">Опубликовать</a> -->
+            </form>
         </div>
 
     </main>
