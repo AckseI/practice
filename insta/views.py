@@ -9,11 +9,11 @@ class IndexView(generic.ListView):
     template_name = 'insta/index.html'
     context_object_name = 'object_list'
 
-class CreationDetailView(generic.DetailView):
+class SubmitView(generic.DetailView):
     model = PostImage
-    template_name = "insta/creation.html"
+    template_name = "insta/submit.html"
 
-class ResultDetailView(generic.DetailView):
+class ResultView(generic.DetailView):
     model = PostImage
     template_name = "insta/result.html"
 
