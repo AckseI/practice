@@ -1,0 +1,32 @@
+{% extends 'insta/base.html' %}
+
+{% block content %}
+<div class="container">
+    {% if object_list.count == 0 %}
+    <h3>Записей нет</h3>
+    {% else %}
+    {% for image in object_list %}
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-auto">
+                <img data-src="{{ image.PostList.url }}" class="img-fluid rounded-start image-preview" alt="...">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <p class="card-text text-title">Еду на машине. Муж купил!!!</p>
+
+                    <button type="button" class="btn">
+                        <i class="bi bi-suit-spade-fill text-dark me-2"></i>0
+                    </button>
+                    <p class="card-text"><small class="text-body-secondary">Опубликовано: 3 минуты назад.</small></p>
+                    <a href="post.html" class="btn btn-primary btn-primary1 ">Открыть пост</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+</div>
+{% endblock content %}
+
