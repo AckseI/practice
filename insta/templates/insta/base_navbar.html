@@ -2,13 +2,13 @@
     <header
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0">
-            <a href="./index.html" class="d-inline-flex text-decoration-none InstaKilogram">
+            <a href="{% url 'insta:index' %}" class="d-inline-flex text-decoration-none InstaKilogram">
                 InstaKilogram
             </a>
         </div>
 
         <div class="col-md-3 text-end">
-            <a href="new.html" class="btn btn-primary btn-primary1 ">Создать пост</a>
+            <a href="{% url 'insta:submit' %}" class="btn btn-primary btn-primary1 ">Создать пост</a>
         </div>
     </header>
 </div>
