@@ -18,13 +18,9 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return PostImage.objects.order_by('-pub_date')
 
-'''
-def index(request):
-    object_list = PostImage.objects.order_by('-pub_date')
-    object_count = PostImage.objects.count()
-    context = {'object_list': object_list}
-    return render(request, 'insta/pages/index.html', context)
-'''    
+class DetailView(generic.DetailView):
+    model = PostImage
+    template_name = "insta/detail.html"
 
 def submit(request):
     submitted = False
@@ -42,17 +38,3 @@ def submit(request):
             submitted = True
     form = PostImageForm
     return render(request, "insta/pages/submit.html", {'form': form, 'submitted': submitted})
-
-class ResultView(generic.DetailView):
-    model = PostImage
-    template_name = "insta/result.html"
-
-class DetailView(generic.DetailView):
-    model = PostImage
-    template_name = "insta/detail.html"
-
-'''
-def index(request):
-    data = PostImage.objects.all()
-    return render(request, 'insta/pages/index.html', {'data': data})
-'''
