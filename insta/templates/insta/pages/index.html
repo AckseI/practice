@@ -5,21 +5,21 @@
     {% if object_list.count == 0 %}
     <h3>Записей нет</h3>
     {% else %}
-    {% for image in object_list %}
+    {% for post_object in object_list %}
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-auto">
-                <img data-src="{{ image.PostList.url }}" class="img-fluid rounded-start image-preview" alt="...">
+                <img src="{{ post_object.image_source.url }}" class="img-fluid rounded-start image-preview" alt="..." >
             </div>
             <div class="col">
                 <div class="card-body">
-                    <p class="card-text text-title">Еду на машине. Муж купил!!!</p>
+                    <p class="card-text text-title">{{ post_object.comment }}</p>
 
                     <button type="button" class="btn">
-                        <i class="bi bi-suit-spade-fill text-dark me-2"></i>0
+                        <i class="bi bi-suit-spade-fill text-dark me-2"></i>{{ post_object.likes}}
                     </button>
-                    <p class="card-text"><small class="text-body-secondary">Опубликовано: 3 минуты назад.</small></p>
-                    <a href="post.html" class="btn btn-primary btn-primary1 ">Открыть пост</a>
+                    <p class="card-text"><small class="text-body-secondary">{{ post_object.pub_date }}.</small></p>
+                    <a href="detail.html" class="btn btn-primary btn-primary1 ">Открыть пост</a>
                 </div>
             </div>
         </div>

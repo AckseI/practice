@@ -1,0 +1,21 @@
+{% extends 'insta/base.html' %}
+
+{% block content %}
+<div class="container">
+    {% if submitted %}
+        success
+    {% else %}
+
+    
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            
+
+            <button type="submit" class="btn btn-primary" value="Submit">Опубликовать</button>
+            <!-- <a href="result.html" class="btn btn-primary">Опубликовать</a> -->
+        </form>
+    {% endif %}
+</div>
+{% endblock content %}
