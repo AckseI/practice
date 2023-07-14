@@ -9,10 +9,9 @@
     
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-
-            {{ form.as_p }}
-            
-
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
             <button type="submit" class="btn btn-primary" value="Submit">Опубликовать</button>
             <!-- <a href="result.html" class="btn btn-primary">Опубликовать</a> -->
         </form>
