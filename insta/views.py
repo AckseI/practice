@@ -31,7 +31,7 @@ def submit(request):
             #post.image_source = form.cleaned_data['image_source']
             post.pub_date = timezone.now()
             post.save()
-            return HttpResponseRedirect('/insta/submit?submitted=True')
+            return HttpResponseRedirect(f'/insta/success/{post.id}')
     else:
         form = PostImageForm
         if 'submitted' in request.GET:
@@ -47,4 +47,4 @@ def likes(request, pk):
 
 def success_id(request, pk):
     post = get_object_or_404(PostImage, pk=pk)
-    return render(request, 'insta/pages/succes.html', {'post': post})
+    return render(request, 'insta/pages/success.html', {'post': post})

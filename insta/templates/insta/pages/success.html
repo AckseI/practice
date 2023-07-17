@@ -1,10 +1,12 @@
+{% extends 'insta/base.html' %}
+
 {% block content %}
 <div class="container">
     <form>
         <fieldset>
           <legend>Успешно!</legend>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <a href="{% url 'insta:detail' post.pk %}" class="btn btn-primary">К посту</a>
+            <a href="{% url 'insta:detail' post.id %}" class="btn btn-primary">К посту</a>
             <a href="{% url 'insta:index' %}" class="btn btn-primary">Главная</a>
           </div>
         </fieldset>

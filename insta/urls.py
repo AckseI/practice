@@ -9,5 +9,5 @@ urlpatterns = [
     path('submit/', views.submit, name='submit'),
     path('detail/<int:pk>', views.detail, name='detail'),
     path('likes/<int:pk>', views.likes, name='likes'),
-    path('success/', views.success_id, name='success_id'),
+    path('success/<int:pk>', views.success_id, name='success_id'),
 ]
