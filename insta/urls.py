@@ -7,5 +7,7 @@ app_name = 'insta'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('submit/', views.submit, name='submit'),
-    path('detail/<int:pk>', views.DetailView.as_view(), name='detail'),
+    path('detail/<int:pk>', views.detail, name='detail'),
+    path('likes/<int:pk>', views.likes, name='likes'),
+    path('success/', views.success_id, name='success_id'),
 ]

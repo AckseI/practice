@@ -14,12 +14,13 @@
             <div class="col">
                 <div class="card-body">
                     <p class="card-text text-title">{{ post_object.comment }}</p>
-
-                    <button type="button" class="btn">
-                        <i class="bi bi-suit-spade-fill text-dark me-2"></i>{{ post_object.likes}}
-                    </button>
+                    <a href="{% url 'insta:likes' post_object.pk %}">
+                        <button type="button" class="btn"> 
+                            <i class="bi bi-suit-spade-fill text-dark me-2"></i>{{ post_object.likes}}
+                        </button>
+                    </a>
                     <p class="card-text"><small class="text-body-secondary">{{ post_object.pub_date }}.</small></p>
-                    <a href="detail/{{ post_object.id }}" class="btn btn-primary btn-primary1 ">Открыть пост</a>
+                    <a href="{% url 'insta:detail' post_object.pk %}" class="btn btn-primary btn-primary1 ">Открыть пост</a>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.utils import timezone
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.http import HttpResponseRedirect
 
@@ -18,9 +18,9 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return PostImage.objects.order_by('-pub_date')
 
-class DetailView(generic.DetailView):
-    model = PostImage
-    template_name = "insta/detail.html"
+def detail(request, pk):
+    post = get_object_or_404(PostImage, pk=pk)
+    return render(request, 'insta/pages/detail.html', {'post': post})
 
 def submit(request):
     submitted = False
@@ -38,3 +38,13 @@ def submit(request):
             submitted = True
     form = PostImageForm
     return render(request, "insta/pages/submit.html", {'form': form, 'submitted': submitted})
+
+def likes(request, pk):
+    like = get_object_or_404(PostImage, id=pk)
+    like.likes += 1
+    like.save()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+def success_id(request, pk):
+    post = get_object_or_404(PostImage, pk=pk)
+    return render(request, 'insta/pages/succes.html', {'post': post})

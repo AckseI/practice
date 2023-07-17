@@ -5,8 +5,6 @@
     {% if submitted %}
         {% include 'insta/pages/success.html' %}
     {% else %}
-
-    
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">

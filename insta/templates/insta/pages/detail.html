@@ -1,1 +1,19 @@
-{% extends '' %}
+{% extends 'insta/base.html' %}
+
+{% block content %}
+<div class="container mb-5" style="width: fit-content;">
+    <div class="card">
+        <img src="{{ post.image_source.url }}" class="card-img-top image-detail" alt="...">
+        <div class="card-body">
+            <p class="card-text text-title">{{ post.comment }}</p>
+            <a href="{% url 'insta:likes' post.pk %}">
+                <button type="button" class="btn"> 
+                    <i class="bi bi-suit-spade-fill text-dark me-2"></i>{{ post.likes}}
+                </button>
+            </a>
+            <p class="card-text"><small class="text-body-secondary">{{post.pub_date}}</small></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

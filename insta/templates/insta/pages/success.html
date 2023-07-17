@@ -4,7 +4,7 @@
         <fieldset>
           <legend>Успешно!</legend>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary">К посту</button>
+            <a href="{% url 'insta:detail' post.pk %}" class="btn btn-primary">К посту</a>
             <a href="{% url 'insta:index' %}" class="btn btn-primary">Главная</a>
           </div>
         </fieldset>
